@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 11:58:50 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/04 14:38:19 by lgaudin          ###   ########.fr       */
+/*   Created: 2023/06/04 14:54:15 by lgaudin           #+#    #+#             */
+/*   Updated: 2023/06/04 14:56:26 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "stack.h"
 
-# include "ft_printf/ft_printf.h"
-# include "ft_printf/libft/libft.h"
-# include "../src/stack/stack.h"
+void	push(t_stack *src, t_stack *dest)
+{
+	if (src->top < 0)
+		return;
 
-#endif
+	dest->top++;
+	dest->pile[dest->top] = src->pile[src->top];
+	src->top--;
+}
