@@ -6,92 +6,77 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:30:01 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/04/15 19:20:10 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/04/19 16:02:03 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	count_strings(char const *str, char c)
+#include "libft.h"
+
+static int	strings_count(char const *str, char c)
 {
 	int	strings_count;
-	int	is_char;
 
 	strings_count = 0;
-	is_char = 0;
-	if (*str == '\0')
-		return (0);
-	while (*(++str))
+	while (*str)
 	{
-		if (*str != c && is_char == 0)
+		if (*str != c)
 		{
-			is_char = 1;
 			strings_count++;
+			while (*str && *str != c)
+				str++;
 		}
-		else if (*str == c)
-			is_char = 0;
+		else
+			str++;
 	}
 	return (strings_count);
 }
 
-static char	*cut_string(char const *s, int start, int end, char c)
+static int	string_length(char const *s, char c, int i)
 {
-	int		i;
-	char	*string;
+	int	length;
 
-	i = 0;
-	string = malloc((end - start + 1) * sizeof(char));
-	while (start < end)
+	length = 0;
+	while (s[i] != c && s[i])
 	{
-		if (s[start] != c)
-			string[i++] = s[start];
-		start++;
+		length++;
+		i++;
 	}
-	string[i] = '\0';
-	return (string);
+	return (length);
+}
+
+static void	free_all(char **result, int index)
+{
+	while (index-- > 0)
+		free(result[index]);
+	free(result);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		index;
 	char	**result;
 	int		result_index;
-	int		i;
-	int		current_start;
 
-	if (!s)
-		return (0);
-	result = malloc(sizeof(char *) * (count_strings(s, c) + 1));
+	index = 0;
+	result_index = -1;
+	result = malloc((strings_count(s, c) + 1) * sizeof(char *));
 	if (!result)
 		return (0);
-	i = -1;
-	result_index = 0;
-	current_start = -1;
-	while (s[++i])
+	while (++result_index < strings_count(s, c))
 	{
-		if (s[i] != c && current_start == -1)
-			current_start = i;
-		if ((s[i] == c || s[i + 1] == 0) && current_start != -1)
+		while (s[index] == c)
+			index++;
+		result[result_index] = ft_substr(s, index, string_length(s, c, index));
+		if (!(result[result_index]))
 		{
-			result[result_index++] = cut_string(s, current_start, i + 1, c);
-			current_start = -1;
+			free_all(result, result_index);
+			return (0);
 		}
+		index += string_length(s, c, index);
 	}
 	result[result_index] = 0;
 	return (result);
 }
-
-// int main(void)
-// {
-// 	char *str = "";
-// 	char sep = 'a';
-// 	printf("There are %d strings in \"%s\"\n", count_strings(str, sep), str);
-// 	char **result = ft_split(str, sep);
-// 	int i = 0;
-// 	while (i <= count_strings(str, sep))
-// 	{
-// 		printf("String %d: %s\n", i, result[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
