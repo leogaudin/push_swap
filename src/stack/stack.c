@@ -6,47 +6,72 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:56:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/04 15:16:54 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 10:11:14 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include "stack.h"
+#include <stdio.h>
 
-t_stack	*initialise_stack(int size)
+t_stack	*initialise_stack(void)
 {
 	t_stack	*stack;
 
 	stack = malloc(sizeof(t_stack));
 	stack->top = -1;
-	stack->pile = malloc(sizeof(int) * size);
 	return (stack);
+}
+
+void	free_arguments(char **arguments)
+{
+	int	i;
+
+	i = 0;
+	while (arguments[i])
+	{
+		free(arguments[i]);
+		i++;
+	}
+	free(arguments);
 }
 
 t_stack	*populate_stack(char **arguments)
 {
-	int	i;
-	int	n;
-	t_stack *stack;
+	int		i;
+	long	n;
+	t_stack	*stack;
 
+	stack = initialise_stack();
 	i = 0;
 	while (arguments[i])
 		i++;
-	stack = initialise_stack(i);
-	i = 0;
-	while (arguments[i])
+	i--;
+	while (i >= 0)
 	{
-		n = ft_atoi(arguments[i]);
+		if (valid_atoi(arguments[i]))
+		{
+			n = ft_atoi(arguments[i]);
+			if (already_exists(n, stack) == 1 || n > 2147483647 || n <
+				-2147483648)
+				print_error(stack);
+		}
+		else
+			print_error(stack);
 		stack->top++;
 		stack->pile[stack->top] = n;
-		ft_printf("stack->pile[%d] = %d\n", stack->top, stack->pile[stack->top]);
-		i++;
+		i--;
 	}
+	free_arguments(arguments);
 	return (stack);
 }
 
 void	free_stack(t_stack *stack)
 {
-	free(stack->pile);
 	free(stack);
+}
+
+int	get_stack_size(t_stack *stack)
+{
+	return (stack->top + 1);
 }

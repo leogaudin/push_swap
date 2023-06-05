@@ -6,18 +6,18 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:00:20 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/04/14 15:18:19 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/04 21:24:34 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
 	int		negative;
-	int		result;
+	long	result;
 
 	i = 0;
 	negative = 1;
@@ -26,8 +26,11 @@ int	ft_atoi(const char *str)
 		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
 		i++;
 	if (str[i] == '-')
+	{
 		negative *= -1;
-	if (str[i] == '-' || str[i] == '+')
+		i++;
+	}
+	else if (str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
