@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:56:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 10:11:14 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:55:27 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	free_arguments(char **arguments)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (arguments[i])
 	{
 		free(arguments[i]);
@@ -36,7 +36,7 @@ void	free_arguments(char **arguments)
 	free(arguments);
 }
 
-t_stack	*populate_stack(char **arguments)
+t_stack	*populate_stack(char **arguments, int argc)
 {
 	int		i;
 	long	n;
@@ -62,7 +62,8 @@ t_stack	*populate_stack(char **arguments)
 		stack->pile[stack->top] = n;
 		i--;
 	}
-	free_arguments(arguments);
+	if (argc == 2)
+		free_arguments(arguments);
 	return (stack);
 }
 

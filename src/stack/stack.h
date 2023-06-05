@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 10:52:40 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:55:37 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 }		t_stack;
 
 t_stack	*initialise_stack(void);
-t_stack	*populate_stack(char **arguments);
+t_stack	*populate_stack(char **arguments, int argc);
 void	free_stack(t_stack *stack);
 void	free_arguments(char **arguments);
 int		get_stack_size(t_stack *stack);
