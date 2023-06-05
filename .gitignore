@@ -54,3 +54,6 @@ dkms.conf
 # Custom
 .vscode
 .DS_Store
+push_swap_tester-main
+push_swap_tester
+checker_Mac
