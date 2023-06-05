@@ -58,3 +58,7 @@ push_swap_tester-main
 push_swap_tester
 checker_Mac
 push_swap
+PushSwap_tester-main
+pyviz.py
+run_MAC.sh
+tester.sh
