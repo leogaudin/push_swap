@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:54:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/04 16:32:18 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 13:35:44 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("ss\n");
 }
 
-void sa(t_stack *stack_a)
+void	sa(t_stack *stack_a)
 {
 	swap(stack_a);
 	ft_printf("sa\n");
 }
 
-void sb(t_stack *stack_b)
+void	sb(t_stack *stack_b)
 {
 	swap(stack_b);
 	ft_printf("sb\n");

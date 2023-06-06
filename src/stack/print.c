@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 11:58:46 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 12:39:47 by lgaudin          ###   ########.fr       */
+/*   Created: 2023/06/05 14:58:26 by lgaudin           #+#    #+#             */
+/*   Updated: 2023/06/05 14:58:58 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "stack.h"
 
-int	main(int argc, char *argv[])
+void	print_error(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**arguments;
+	if (stack)
+		free_stack(stack);
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
+}
 
-	if (argc < 2)
-		return (0);
-	else if (argc == 2)
-		arguments = ft_split(argv[1], ' ');
-	else
-		arguments = argv + 1;
-	a = populate_stack(arguments, argc);
-	if (!a)
-		print_error(a);
-	b = initialise_stack();
-	sort_stack(a, b);
-	// print_stack(a);
-	free_stack(a);
-	free_stack(b);
-	return (0);
+void	print_stack(t_stack *stack)
+{
+	int	i;
+
+	i = stack->top;
+	while (i >= 0)
+	{
+		ft_printf("i = %d and stack->pile[i] = %d\n", i, stack->pile[i]);
+		i--;
+	}
+	ft_printf("\n");
 }

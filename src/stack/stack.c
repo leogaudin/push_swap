@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:56:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 11:55:27 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 14:59:53 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,8 @@ t_stack	*initialise_stack(void)
 
 	stack = malloc(sizeof(t_stack));
 	stack->top = -1;
+	stack->size = 0;
 	return (stack);
-}
-
-void	free_arguments(char **arguments)
-{
-	int	i;
-
-	i = 1;
-	while (arguments[i])
-	{
-		free(arguments[i]);
-		i++;
-	}
-	free(arguments);
 }
 
 t_stack	*populate_stack(char **arguments, int argc)
@@ -43,17 +31,15 @@ t_stack	*populate_stack(char **arguments, int argc)
 	t_stack	*stack;
 
 	stack = initialise_stack();
-	i = 0;
-	while (arguments[i])
-		i++;
-	i--;
+	i = get_size(arguments) - 1;
+	stack->size = i + 1;
 	while (i >= 0)
 	{
 		if (valid_atoi(arguments[i]))
 		{
 			n = ft_atoi(arguments[i]);
-			if (already_exists(n, stack) == 1 || n > 2147483647 || n <
-				-2147483648)
+			if (already_exists(n, stack) == 1 || n > 2147483647
+				|| n < -2147483648)
 				print_error(stack);
 		}
 		else
@@ -65,14 +51,4 @@ t_stack	*populate_stack(char **arguments, int argc)
 	if (argc == 2)
 		free_arguments(arguments);
 	return (stack);
-}
-
-void	free_stack(t_stack *stack)
-{
-	free(stack);
-}
-
-int	get_stack_size(t_stack *stack)
-{
-	return (stack->top + 1);
 }

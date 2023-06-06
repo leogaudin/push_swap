@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 11:55:37 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 15:01:16 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int	top;
+	int	size;
 	int	pile[1024];
 }		t_stack;
 
@@ -26,7 +27,6 @@ t_stack	*initialise_stack(void);
 t_stack	*populate_stack(char **arguments, int argc);
 void	free_stack(t_stack *stack);
 void	free_arguments(char **arguments);
-int		get_stack_size(t_stack *stack);
 void	push(t_stack *src, t_stack *dest);
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
@@ -48,5 +48,9 @@ void	print_error(t_stack *stack);
 int		ft_isspace(char c);
 int		already_exists(int n, t_stack *stack);
 int		already_sorted(t_stack *stack);
+int		find_min_index(t_stack *stack);
+int		find_max_index(t_stack *stack);
+int		get_size(char **arguments);
+void	print_stack(t_stack *stack);
 
 #endif

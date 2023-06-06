@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:45:55 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 10:07:36 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/05 14:58:43 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,4 @@ int	already_sorted(t_stack *stack)
 		i--;
 	}
 	return (1);
-}
-
-void	print_error(t_stack *stack)
-{
-	if (stack)
-		free_stack(stack);
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
 }
