@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 15:01:16 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:02:01 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ int		already_exists(int n, t_stack *stack);
 int		already_sorted(t_stack *stack);
 int		find_min_index(t_stack *stack);
 int		find_max_index(t_stack *stack);
-int		get_size(char **arguments);
+int		get_array_length(char **arguments);
 void	print_stack(t_stack *stack);
+int		scan_from_bottom(t_stack *stack, int min, int max);
+int		scan_from_top(t_stack *stack, int min, int max);
+int		get_min_cost(int a, int b);
+void	sort_chunk(t_stack *stack_a, t_stack *stack_b, int chunk_start,
+			int chunk_end);
+void	dump_back(t_stack *stack_a, t_stack *stack_b);
+void	smart_push_b(t_stack *stack_a, t_stack *stack_b, int value);
+int		is_biggest_or_smallest(t_stack *stack, int value);
+void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name);
 
 #endif

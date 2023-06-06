@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 11:58:46 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 12:39:47 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:15:39 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char *argv[])
 		print_error(a);
 	b = initialise_stack();
 	sort_stack(a, b);
-	// print_stack(a);
 	free_stack(a);
 	free_stack(b);
 	return (0);

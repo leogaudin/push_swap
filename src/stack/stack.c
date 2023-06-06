@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:56:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 14:59:53 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:22:50 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "stack.h"
 #include <stdio.h>
 
+/**
+ * @brief    Allocates the memory to a stack and returns a pointer to it.
+ *
+ * @return   t_stack*  pointer to the allocated stack
+ */
 t_stack	*initialise_stack(void)
 {
 	t_stack	*stack;
@@ -24,6 +29,13 @@ t_stack	*initialise_stack(void)
 	return (stack);
 }
 
+/**
+ * @brief    Populates an already-allocated stack with the given arguments.
+ *
+ * @param    arguments array of strings representing the arguments
+ * @param    argc      number of arguments, if =2 then free arguments
+ * @return   t_stack*  pointer to the populated stack
+ */
 t_stack	*populate_stack(char **arguments, int argc)
 {
 	int		i;
@@ -31,7 +43,7 @@ t_stack	*populate_stack(char **arguments, int argc)
 	t_stack	*stack;
 
 	stack = initialise_stack();
-	i = get_size(arguments) - 1;
+	i = get_array_length(arguments) - 1;
 	stack->size = i + 1;
 	while (i >= 0)
 	{

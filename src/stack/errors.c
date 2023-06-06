@@ -6,12 +6,18 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:45:55 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/05 14:58:43 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:44:05 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
+/**
+ * @brief    Check if the char is a space.
+ *
+ * @param    c         The char to check.
+ * @return             1 if the char is a space, 0 otherwise.
+ */
 int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t'
@@ -20,6 +26,13 @@ int	ft_isspace(char c)
 	return (0);
 }
 
+/**
+ * @brief    Check if the string is a valid integer that can be passed
+ * to atoi.
+ *
+ * @param    str       The string to check.
+ * @return             1 if the string is a valid integer, 0 otherwise.
+ */
 int	valid_atoi(const char *str)
 {
 	int	i;
@@ -39,6 +52,13 @@ int	valid_atoi(const char *str)
 	return (1);
 }
 
+/**
+ * @brief    Check if a number already exists in the stack.
+ *
+ * @param    n         The number to look for.
+ * @param    stack     The stack to look in.
+ * @return             1 if the number already exists, 0 otherwise.
+ */
 int	already_exists(int n, t_stack *stack)
 {
 	int	i;
@@ -51,6 +71,12 @@ int	already_exists(int n, t_stack *stack)
 	return (0);
 }
 
+/**
+ * @brief    Check if the stack is already sorted.
+ *
+ * @param    stack     The stack to check.
+ * @return             1 if the stack is already sorted, 0 otherwise.
+ */
 int	already_sorted(t_stack *stack)
 {
 	int	i;
