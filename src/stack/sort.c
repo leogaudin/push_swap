@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:48:14 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 15:02:48 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/06 15:07:09 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 #include "stack.h"
 
+/**
+ * @brief Scans the stack from the top to find the index of the first element
+ *        within the specified range.
+ * @param stack The stack to scan.
+ * @param min The minimum value of the range.
+ * @param max The maximum value of the range.
+ * @return The index of the first element within the range, or -1 if not found.
+ */
 static int	scan_from_top(t_stack *stack, int min, int max)
 {
 	int	i;
@@ -28,6 +36,14 @@ static int	scan_from_top(t_stack *stack, int min, int max)
 	return (-1);
 }
 
+/**
+ * @brief Scans the stack from the bottom to find the index of the first element
+ *        within the specified range.
+ * @param stack The stack to scan.
+ * @param min The minimum value of the range.
+ * @param max The maximum value of the range.
+ * @return The index of the first element within the range, or -1 if not found.
+ */
 static int	scan_from_bottom(t_stack *stack, int min, int max)
 {
 	int	i;
@@ -42,6 +58,13 @@ static int	scan_from_bottom(t_stack *stack, int min, int max)
 	return (-1);
 }
 
+/**
+ * @brief Calculates the minimum cost between two values.
+ * @param a The first value.
+ * @param b The second value.
+ * @return 1 if `a` is less than or equal to `b`, -1 if `a` is -1 and `b` is not,
+ *         and 2 otherwise.
+ */
 static int	get_min_cost(int a, int b)
 {
 	if (a <= b)
@@ -51,6 +74,13 @@ static int	get_min_cost(int a, int b)
 	return (2);
 }
 
+/**
+ * @brief Moves the elements within the specified range to the top of the stack.
+ * @param stack The stack to modify.
+ * @param min The minimum value of the range.
+ * @param max The maximum value of the range.
+ * @param stack_name The name of the stack ('a' or 'b').
+ */
 static void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name)
 {
 	int	closest;
@@ -82,12 +112,24 @@ static void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_na
 	}
 }
 
+/**
+ * @brief Checks the value of the element below the top element of stack_b
+ *        and moves it to stack_a if it satisfies a specific condition.
+ * @param stack_a The first stack.
+ * @param stack_b The second stack.
+ * @param value The value of the top element of stack_a.
+ */
 static void	check_b_and_move(t_stack *stack_a, t_stack *stack_b, int value)
 {
 	if (value + 1 == value + 2 - 1)
 		pb(stack_a, stack_b);
 }
 
+/**
+ * @brief Dumps all elements from stack_b back to stack_a.
+ * @param stack_a The first stack.
+ * @param stack_b The second stack.
+ */
 static void dump_back(t_stack *stack_a, t_stack *stack_b)
 {
 	int max;
@@ -100,6 +142,13 @@ static void dump_back(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+/**
+ * @brief Sorts a chunk of elements within the specified range in stack_a.
+ * @param stack_a The first stack.
+ * @param stack_b The second stack.
+ * @param chunk_start The starting value of the chunk range.
+ * @param chunk_end The ending value of the chunk range.
+ */
 static void	sort_chunk(t_stack *stack_a, t_stack *stack_b, int chunk_start,
 		int chunk_end)
 {
@@ -111,6 +160,11 @@ static void	sort_chunk(t_stack *stack_a, t_stack *stack_b, int chunk_start,
 	}
 }
 
+/**
+ * @brief Performs a big sort on stack_a and stack_b.
+ * @param stack_a The first stack.
+ * @param stack_b The second stack.
+ */
 static void big_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	chunk_size;
@@ -130,6 +184,11 @@ static void big_sort(t_stack *stack_a, t_stack *stack_b)
 	dump_back(stack_a, stack_b);
 }
 
+/**
+ * @brief Sorts the stack using the specified algorithm.
+ * @param stack_a The first stack.
+ * @param stack_b The second stack.
+ */
 void	sort_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	if (already_sorted(stack_a))
