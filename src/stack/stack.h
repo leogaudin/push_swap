@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:02:01 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/07 16:11:43 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ typedef struct s_stack
 }		t_stack;
 
 t_stack	*initialise_stack(void);
-t_stack	*populate_stack(char **arguments, int argc);
+t_stack	*populate_stack(char **arguments);
 void	free_stack(t_stack *stack);
 void	free_arguments(char **arguments);
 void	push(t_stack *src, t_stack *dest);
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
 void	swap(t_stack *stack);
-void	sort_stack(t_stack *stack_a, t_stack *stack_b);
+void	sort_stack(t_stack *stack_a, t_stack *stack_b, char **arguments);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
@@ -44,7 +44,7 @@ void	rrb(t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 int		valid_atoi(const char *str);
-void	print_error(t_stack *stack);
+void	print_error(t_stack *stack, char **arguments);
 int		ft_isspace(char c);
 int		already_exists(int n, t_stack *stack);
 int		already_sorted(t_stack *stack);
@@ -61,5 +61,9 @@ void	dump_back(t_stack *stack_a, t_stack *stack_b);
 void	smart_push_b(t_stack *stack_a, t_stack *stack_b, int value);
 int		is_biggest_or_smallest(t_stack *stack, int value);
 void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name);
+int		get_directly_below_index(t_stack *stack, int value);
+int		get_directly_above_index(t_stack *stack, int value);
+void	exit_without_error(t_stack *stack_a, t_stack *stack_b,
+			char **arguments);
 
 #endif

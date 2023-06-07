@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:52:01 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:37:27 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/07 14:21:00 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param    value     The value to compare.
  * @return             The index of the closest superior value.
  */
-static int	get_directly_above_index(t_stack *stack, int value)
+int	get_directly_above_index(t_stack *stack, int value)
 {
 	int	i;
 	int	closest;
@@ -45,7 +45,7 @@ static int	get_directly_above_index(t_stack *stack, int value)
  * @param    value     The value to compare.
  * @return             The index of the closest inferior value.
  */
-static int	get_directly_below_index(t_stack *stack, int value)
+int	get_directly_below_index(t_stack *stack, int value)
 {
 	int	i;
 	int	closest;

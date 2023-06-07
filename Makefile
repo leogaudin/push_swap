@@ -7,7 +7,7 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 INCLUDES = -I . -I include -I $(LIBFT_DIR) -I $(FT_PRINTF_DIR)
 
-SRCS = src/main.c src/stack/stack.c src/stack/push.c src/stack/rotate.c src/stack/reverse_rotate.c src/stack/swap.c src/stack/sort.c src/stack/errors.c src/stack/scan.c src/stack/free.c src/stack/print.c src/stack/getters.c src/stack/big_sort_utils.c
+SRCS = src/main.c src/stack/stack.c src/stack/push.c src/stack/rotate.c src/stack/reverse_rotate.c src/stack/swap.c src/stack/sort.c src/stack/errors.c src/stack/scan.c src/stack/free.c src/stack/print.c src/stack/getters.c src/stack/big_sort_utils.c src/stack/optimiser.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

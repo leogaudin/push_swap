@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 11:58:46 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:15:39 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/07 16:11:35 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int	main(int argc, char *argv[])
 		arguments = ft_split(argv[1], ' ');
 	else
 		arguments = argv + 1;
-	a = populate_stack(arguments, argc);
+	a = populate_stack(arguments);
+	if (get_array_length(arguments) == 1 || already_sorted(a) == 1)
+		exit_without_error(a, NULL, arguments);
 	if (!a)
-		print_error(a);
+		print_error(a, arguments);
 	b = initialise_stack();
-	sort_stack(a, b);
-	free_stack(a);
-	free_stack(b);
+	sort_stack(a, b, arguments);
+	exit_without_error(a, b, arguments);
 	return (0);
 }

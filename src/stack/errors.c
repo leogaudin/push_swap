@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:45:55 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:44:05 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/07 16:25:20 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,19 @@ int	already_sorted(t_stack *stack)
 		i--;
 	}
 	return (1);
+}
+
+/**
+ * @brief    Free everything and exit the program without error.
+ *
+ * @param    stack_a
+ * @param    stack_b
+ * @param    arguments
+ */
+void	exit_without_error(t_stack *stack_a, t_stack *stack_b, char **arguments)
+{
+	free_arguments(arguments);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	exit(0);
 }
