@@ -79,7 +79,7 @@ Please refer to the article for a detailed explanation.
 * The number of chunks is determined by the size of Stack A. The bigger the stack, the more chunks are used:
 
 	* Between 6 and 100 numbers: **5 chunks**
-	* Between 101 and ∞: **11 chunks**
+	* Between 101 and 1024: **11 chunks**
 
 
 ## 🚀 Performance
