@@ -1,6 +1,7 @@
 <div align="center">
 	<h1>🔄 push_swap</h1>
 	<p>This repository contains the implementation of the push_swap project, which focuses on sorting a stack of numbers using a limited set of actions.</p>
+    <a href="https://wakatime.com/badge/user/db0e5671-cec5-4e7b-9d41-19a881e67f7d/project/552619a1-bf7a-4090-8d74-9eb473b20c90"><img src="https://wakatime.com/badge/user/db0e5671-cec5-4e7b-9d41-19a881e67f7d/project/552619a1-bf7a-4090-8d74-9eb473b20c90.svg" alt="wakatime"></a>
 	<img src="https://img.shields.io/badge/norminette-passing-success"/>
 	<a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/FindingLeaks.html"><img src="https://img.shields.io/badge/leaks-none-success" /></a>
 	<img src="https://img.shields.io/badge/bonus-none-red"/>
