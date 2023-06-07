@@ -121,6 +121,7 @@ Precision = 100 % OK (0 KO)
 ### 🟠 100 random numbers
 ```
 100 elements, 1000 iterations (seed 2718693033)
+
 Worst = 960 instructions
 Median = 844 instructions
 Best = 765 instructions
@@ -133,6 +134,7 @@ Precision = 100 % OK (0 KO)
 ### 🔴 500 random numbers
 ```
 500 elements, 1000 iterations (seed 1977831745)
+
 Worst = 8486 instructions
 Median = 7950 instructions
 Best = 7504 instructions
@@ -141,8 +143,4 @@ Objective = 0 % under 5500 (1000 above)
 Precision = 100 % OK (0 KO)
 100 % effective
 ```
-
-## Credits
-
-The algorithm used in this project is inspired from the article [Push Swap: The Least Amount of Moves with Two Stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a) by Jamie Dawson. Please refer to the article for a detailed explanation.
 
