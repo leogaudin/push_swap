@@ -39,7 +39,7 @@ clean:
 	@$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) checker
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@$(MAKE) -C $(FT_PRINTF_DIR) fclean
 

@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:59:36 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 16:57:29 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 18:10:21 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,20 @@
  *
  * @param    arguments The arguments to free.
  */
-void free_arguments(char **arguments)
+void	free_arguments(char **arguments)
 {
-    int i;
+	int	i;
 
-    if (!arguments)
-        return;
-
-    i = 0;
-    while (arguments[i])
-    {
-        free(arguments[i]);
-        i++;
-    }
+	if (!arguments)
+		return ;
+	i = 0;
+	while (arguments[i])
+	{
+		free(arguments[i]);
+		i++;
+	}
 	free(arguments);
 }
-
 
 /**
  * @brief    Free the stack.
