@@ -24,6 +24,13 @@
 ├── include
 │   └── push_swap.h
 └── src
+    ├── checker
+    │   ├── checker.c
+    │   ├── checker.h
+    │   └── get_next_line
+    │       ├── get_next_line.c
+    │       ├── get_next_line.h
+    │       └── get_next_line_utils.c
     ├── main.c
     └── stack
         ├── big_sort_utils.c
