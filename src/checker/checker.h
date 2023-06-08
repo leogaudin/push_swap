@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 11:58:50 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 16:01:32 by lgaudin          ###   ########.fr       */
+/*   Created: 2023/06/08 14:58:26 by lgaudin           #+#    #+#             */
+/*   Updated: 2023/06/08 16:00:24 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
-# include "../src/stack/stack.h"
-# include "ft_printf/ft_printf.h"
-# include "ft_printf/libft/libft.h"
+# include "../../include/push_swap.h"
+# include "../get_next_line/get_next_line.h"
 
 #endif
