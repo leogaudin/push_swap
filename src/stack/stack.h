@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 15:03:39 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 17:04:30 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 }		t_stack;
 
 t_stack	*initialise_stack(void);
-t_stack	*populate_stack(char **arguments);
+t_stack	*populate_stack(char **arguments, int argc);
 void	free_stack(t_stack *stack);
 void	free_arguments(char **arguments);
 void	push(t_stack *src, t_stack *dest);
@@ -44,7 +44,7 @@ void	rrb(t_stack *stack_b, int print);
 void	pa(t_stack *stack_a, t_stack *stack_b, int print);
 void	pb(t_stack *stack_a, t_stack *stack_b, int print);
 int		valid_atoi(const char *str);
-void	print_error(t_stack *stack, char **arguments);
+void	print_error(t_stack *stack, char **arguments, int argc);
 int		ft_isspace(char c);
 int		already_exists(int n, t_stack *stack);
 int		already_sorted(t_stack *stack);

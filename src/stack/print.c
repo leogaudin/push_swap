@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:58:26 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/07 16:00:55 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 17:04:21 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
  *
  * @param    stack     The stack to free.
  */
-void	print_error(t_stack *stack, char **arguments)
+void	print_error(t_stack *stack, char **arguments, int argc)
 {
 	ft_putstr_fd("Error\n", 2);
 	free_stack(stack);
-	free_arguments(arguments);
+	if (argc == 2)
+		free_arguments(arguments);
 	exit(EXIT_FAILURE);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:56:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/07 16:22:17 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 17:10:37 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*initialise_stack(void)
  * @param    argc      number of arguments, if =2 then free arguments
  * @return   t_stack*  pointer to the populated stack
  */
-t_stack	*populate_stack(char **arguments)
+t_stack	*populate_stack(char **arguments, int argc)
 {
 	int		i;
 	long	n;
@@ -52,10 +52,10 @@ t_stack	*populate_stack(char **arguments)
 			n = ft_atoi(arguments[i]);
 			if (already_exists(n, stack) == 1 || n > 2147483647
 				|| n < -2147483648)
-				print_error(stack, arguments);
+				print_error(stack, arguments, argc);
 		}
 		else
-			print_error(stack, arguments);
+			print_error(stack, arguments, argc);
 		stack->top++;
 		stack->pile[stack->top] = n;
 		i--;
