@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:57:43 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 15:04:48 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 19:26:13 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,14 +149,6 @@ void	dump_back(t_stack *stack_a, t_stack *stack_b)
 		pa(stack_a, stack_b, 1);
 	}
 }
-
-/**
- * @brief Sorts a chunk of elements within the specified range in stack_a.
- * @param stack_a The first stack.
- * @param stack_b The second stack.
- * @param chunk_start The starting value of the chunk range.
- * @param chunk_end The ending value of the chunk range.
- */
 
 /**
  * @brief    Sorts a chunk of elements within the specified range in stack_a.
