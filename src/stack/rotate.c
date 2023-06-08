@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:54:13 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:30:52 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 15:01:43 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ void	rotate(t_stack *stack)
  * the last one.
  * @param    stack_a   Stack to rotate.
  */
-void	ra(t_stack *stack_a)
+void	ra(t_stack *stack_a, int print)
 {
 	rotate(stack_a);
-	ft_printf("ra\n");
+	if (print == 1)
+		ft_printf("ra\n");
 }
 
 /**
@@ -51,10 +52,11 @@ void	ra(t_stack *stack_a)
  * the last one.
  * @param    stack_b   Stack to rotate.
  */
-void	rb(t_stack *stack_b)
+void	rb(t_stack *stack_b, int print)
 {
 	rotate(stack_b);
-	ft_printf("rb\n");
+	if (print == 1)
+		ft_printf("rb\n");
 }
 
 /**
@@ -63,9 +65,10 @@ void	rb(t_stack *stack_b)
  * @param    stack_a
  * @param    stack_b
  */
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("rr\n");
+	if (print == 1)
+		ft_printf("rr\n");
 }

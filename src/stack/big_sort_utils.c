@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:57:43 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:50:13 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 15:04:48 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name)
 			- scan_from_top(stack, min, max) > 0)
 		{
 			if (stack_name == 'a')
-				ra(stack);
+				ra(stack, 1);
 			else
-				rb(stack);
+				rb(stack, 1);
 		}
 	}
 	else
@@ -41,9 +41,9 @@ void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name)
 			- scan_from_top(stack, min, max) > 0)
 		{
 			if (stack_name == 'a')
-				rra(stack);
+				rra(stack, 1);
 			else
-				rrb(stack);
+				rrb(stack, 1);
 		}
 	}
 }
@@ -120,7 +120,7 @@ void	smart_push_b(t_stack *stack_a, t_stack *stack_b, int value)
 	else
 		target = 0;
 	move_in_range_to_top(stack_b, target, target, 'b');
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, 1);
 }
 
 /**
@@ -146,7 +146,7 @@ void	dump_back(t_stack *stack_a, t_stack *stack_b)
 		max = find_max_index(stack_b);
 		move_in_range_to_top(stack_b, stack_b->pile[max], stack_b->pile[max],
 			'b');
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, 1);
 	}
 }
 

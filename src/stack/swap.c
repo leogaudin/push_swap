@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:54:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:24:02 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 15:02:16 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ void	swap(t_stack *stack)
  * @param    stack_a
  * @param    stack_b
  */
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	if (print == 1)
+		ft_printf("ss\n");
 }
 
 /**
@@ -46,10 +47,11 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
  *
  * @param    stack_a
  */
-void	sa(t_stack *stack_a)
+void	sa(t_stack *stack_a, int print)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	if (print == 1)
+		ft_printf("sa\n");
 }
 
 /**
@@ -57,8 +59,9 @@ void	sa(t_stack *stack_a)
  *
  * @param    stack_b
  */
-void	sb(t_stack *stack_b)
+void	sb(t_stack *stack_b, int print)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	if (print == 1)
+		ft_printf("sb\n");
 }

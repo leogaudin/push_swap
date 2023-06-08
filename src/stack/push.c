@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:54:15 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/06 19:34:21 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 15:02:35 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ void	push(t_stack *src, t_stack *dest)
  * @param    stack_a
  * @param    stack_b
  */
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	push(stack_b, stack_a);
-	ft_printf("pa\n");
+	if (print == 1)
+		ft_printf("pa\n");
 }
 
 /**
@@ -46,8 +47,9 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
  * @param    stack_a
  * @param    stack_b
  */
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	push(stack_a, stack_b);
-	ft_printf("pb\n");
+	if (print == 1)
+		ft_printf("pb\n");
 }

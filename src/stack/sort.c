@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:48:14 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/07 16:24:40 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/08 15:04:22 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ static void	sort_three(t_stack *stack_a)
 	pile = stack_a->pile;
 	if (pile[2] > pile[1] && pile[1] > pile[0] && pile[0] < pile[2])
 	{
-		sa(stack_a);
-		rra(stack_a);
+		sa(stack_a, 1);
+		rra(stack_a, 1);
 	}
 	else if (pile[2] > pile[1] && pile[1] < pile[0] && pile[0] < pile[2])
-		ra(stack_a);
+		ra(stack_a, 1);
 	else if (pile[0] > pile[1] && pile[1] < pile[2] && pile[0] > pile[2])
-		sa(stack_a);
+		sa(stack_a, 1);
 	else if (pile[0] > pile[2] && pile[2] < pile[1] && pile[0] < pile[1])
 	{
-		sa(stack_a);
-		ra(stack_a);
+		sa(stack_a, 1);
+		ra(stack_a, 1);
 	}
 	else if (pile[0] < pile[2] && pile[2] < pile[1] && pile[2] > pile[0])
-		rra(stack_a);
+		rra(stack_a, 1);
 }
 
 /**
@@ -51,13 +51,13 @@ static void	small_sort(t_stack *stack_a, t_stack *stack_b)
 	int	target;
 
 	if (stack_a->size == 2)
-		sa(stack_a);
+		sa(stack_a, 1);
 	else if (stack_a->size == 3)
 		sort_three(stack_a);
 	else
 	{
 		while (stack_a->top > 2)
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 		sort_three(stack_a);
 		while (stack_b->top >= 0)
 		{
@@ -68,10 +68,10 @@ static void	small_sort(t_stack *stack_a, t_stack *stack_b)
 				target = stack_a->pile[get_directly_above_index(stack_a,
 						stack_b->pile[stack_b->top])];
 			move_in_range_to_top(stack_a, target, target, 'a');
-			pa(stack_a, stack_b);
+			pa(stack_a, stack_b, 1);
 		}
 		while (find_min_index(stack_a) != stack_a->top)
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 }
 
