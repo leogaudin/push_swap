@@ -49,7 +49,7 @@
         └── swap.c
 ```
 
-## ⚙️ Algorithm Explanation
+## ⚙️ Algorithm Logic
 
 *🙇🏻‍♂️ The algorithm used in this project is based on the concepts described in the following article:*
 
@@ -90,6 +90,23 @@ Please refer to the article for a detailed explanation.
 	* Between 6 and 100 numbers: **5 chunks**
 	* Between 101 and 1024 numbers: **11 chunks**
 
+## 🔎 Detailed Procedure
+
+1. 💯 **`big_sort()`** : The algorithm **splits the stack into chunks** and calls the ``sort_chunk`` function.
+
+2. 🔢 **`sort_chunk()`** : For every chunk, the algorithm will **scan the stack A** (both from the top and the bottom) **until it finds a number that belongs to the desired range**.
+
+3. 🆙 **`move_in_range_to_top()`** : It will then check the positions of the number found from the top and the one from the bottom, and **determines which one costs the least operations to move to the top**, using either `ra` or `rra`.
+
+4. 🫸🏼 **`smart_push_b()`** : Once the number is at the top, the algorithm will push it to stack B in the most efficient way possible.
+
+    * **If the number is bigger** than all the numbers in stack B, it will be pushed **either on top of the smallest or the biggest one**, once again depending on which one costs less to bring to the top.
+    * **If the number is smaller** than all the numbers in stack B, it will be pushed **on top of the smallest one**.
+    * Otherwise, the number is just pushed on top of stack B.
+
+5. 🔄 Operation is repeated until stack A is empty.
+
+6. 🗑️ **`dump_back()`** : The algorithm will then move all the numbers from stack B to stack A, **starting from the maximum number**, until stack B is empty.
 
 ## 🚀 Performance
 
