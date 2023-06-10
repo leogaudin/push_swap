@@ -108,6 +108,10 @@ Please refer to the article for a detailed explanation.
 
 6. 🗑️ **`dump_back()`** : The algorithm will then move all the numbers from stack B to stack A, **starting from the maximum number**, until stack B is empty.
 
+## 👀 Visual Demo
+
+![push_swap](./demo.gif)
+
 ## 🚀 Performance
 
 The performance is based on the [📖 42 Correction sheet of push_swap](https://github.com/rizky/42-corrections/blob/master/push_swap.pdf).
