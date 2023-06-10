@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:45:55 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/07 16:25:20 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/10 15:04:48 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,11 @@ int	already_sorted(t_stack *stack)
  * @param    stack_b
  * @param    arguments
  */
-void	exit_without_error(t_stack *stack_a, t_stack *stack_b, char **arguments)
+void	exit_without_error(t_stack *stack_a, t_stack *stack_b, char **arguments,
+		int argc)
 {
-	free_arguments(arguments);
+	if (argc == 2)
+		free_arguments(arguments);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	exit(0);

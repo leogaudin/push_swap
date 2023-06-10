@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:32:24 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 17:04:30 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/10 15:04:41 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	push(t_stack *src, t_stack *dest);
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
 void	swap(t_stack *stack);
-void	sort_stack(t_stack *stack_a, t_stack *stack_b, char **arguments);
+void	sort_stack(t_stack *stack_a, t_stack *stack_b, char **arguments,
+			int argc);
 void	ss(t_stack *stack_a, t_stack *stack_b, int print);
 void	sa(t_stack *stack_a, int print);
 void	sb(t_stack *stack_b, int print);
@@ -63,7 +64,7 @@ int		is_biggest_or_smallest(t_stack *stack, int value);
 void	move_in_range_to_top(t_stack *stack, int min, int max, char stack_name);
 int		get_directly_below_index(t_stack *stack, int value);
 int		get_directly_above_index(t_stack *stack, int value);
-void	exit_without_error(t_stack *stack_a, t_stack *stack_b,
-			char **arguments);
+void	exit_without_error(t_stack *stack_a, t_stack *stack_b, char **arguments,
+			int argc);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 14:58:28 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 18:12:26 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/10 15:08:32 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char *argv[])
 		arguments = argv + 1;
 	a = populate_stack(arguments, argc);
 	if (get_array_length(arguments) == 1 || already_sorted(a) == 1)
-		exit_without_error(a, NULL, arguments);
+		exit_without_error(a, NULL, arguments, argc);
 	if (!a)
 		print_error(a, arguments, argc);
 	b = initialise_stack();
@@ -90,6 +90,6 @@ int	main(int argc, char *argv[])
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	exit_without_error(a, b, arguments);
+	exit_without_error(a, b, arguments, argc);
 	return (0);
 }

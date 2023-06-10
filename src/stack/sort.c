@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:48:14 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/08 15:04:22 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/10 15:05:19 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,14 +109,17 @@ static void	big_sort(t_stack *stack_a, t_stack *stack_b, int chunk_count)
  * @param    stack_a   Stack to sort.
  * @param    stack_b   Stack to use as a buffer.
  */
-void	sort_stack(t_stack *stack_a, t_stack *stack_b, char **arguments)
+void	sort_stack(t_stack *stack_a, t_stack *stack_b, char **arguments,
+		int argc)
 {
-	if (already_sorted(stack_a))
-		exit_without_error(stack_a, stack_b, arguments);
-	else if (stack_a->size <= 6)
-		small_sort(stack_a, stack_b);
-	else if (stack_a->size <= 100)
-		big_sort(stack_a, stack_b, 5);
-	else
-		big_sort(stack_a, stack_b, 11);
+	if (already_sorted(stack_a) == 0)
+	{
+		if (stack_a->size <= 6)
+			small_sort(stack_a, stack_b);
+		else if (stack_a->size <= 100)
+			big_sort(stack_a, stack_b, 5);
+		else
+			big_sort(stack_a, stack_b, 11);
+	}
+	exit_without_error(stack_a, stack_b, arguments, argc);
 }
