@@ -6,15 +6,15 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:13:07 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/05/04 02:29:24 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/13 14:55:33 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char const *str)
+size_t	ft_strlen(char const *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (str[count])
