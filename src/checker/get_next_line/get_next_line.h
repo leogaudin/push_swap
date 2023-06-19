@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:52:41 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/13 14:54:13 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/19 11:57:32 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-size_t		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
 void	*ft_calloc(size_t nelem, size_t elsize);
