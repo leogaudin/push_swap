@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:45:55 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/10 15:04:48 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/19 11:57:58 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	already_sorted(t_stack *stack)
 	int	i;
 
 	i = stack->top;
-	if (i <= 1)
+	if (i <= 0)
 		return (1);
 	while (i >= 0)
 	{
